@@ -6,7 +6,7 @@
 
 /* Farve variabler*/
 :root {
-    --Background: #EFE7DD;
+    --Background:#FFE3F2;
     --overskrifter: #F4C8E6;
     --cards: #5A4A42;
     --barcards: #1E1917;
@@ -36,6 +36,7 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+    opacity: 80%;
 }
 
 /* Billede med højtaler på podie*/
@@ -50,7 +51,7 @@ body {
 
 .hero-copy {
     font-size: 40px;
-    color: var(--tekst);
+    color: var(--barcards);
     font-family: var(--font-heading);
     position: absolute;
     top: 250px;
@@ -64,9 +65,9 @@ body {
 /* --- Knap container (placering i hero) --- */
 .hero-buttons-left {
     position: absolute;
-    top: 450px;
+    top: 500px;
     /* justér efter smag */
-    left: 90px;
+    left: 80px;
     /* justér efter smag */
     z-index: 20;
     /* sørger for at knappen ligger OVER billedet */
@@ -78,7 +79,7 @@ body {
     padding: 14px 32px;
     background-color: var(--barcards);
     /* mørk brun */
-    color: var(--overskrifter);
+    color: var(--tekst);
     /* lyserød tekst */
     font-weight: 600;
     border-radius: 40px;
@@ -231,4 +232,91 @@ body {
 
 .add-btn:hover {
     transform: scale(1.05);
+}
+
+/* styling af de 2 billeder med tekst ved siden af*/
+
+/* ————— Info-sektioner med billede + tekst ————— */
+
+.info-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    padding: 60px 0;
+    background: var(--Background);
+    /* samme lyserøde som resten */
+}
+
+/* Tekst */
+.info-text {
+    flex: 1;
+    color: #2a2a2a;
+}
+
+.info-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 3vw, 42px);
+    margin-bottom: 16px;
+}
+
+.info-text p,
+.info-text ul {
+    font-size: 25px;
+    line-height: 1.6;
+}
+
+.info-text ul {
+    padding-left: 50px;
+}
+
+/* Billede – fælles stil */
+.info-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.info-image img {
+    width: 400px;
+    height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+
+/* Normal sektion: billede til venstre → luft mod venstre kant */
+.info-section .info-image img {
+    margin-left: 60px;
+    /* afstand til venstre kant */
+    margin-right: 0;
+}
+
+/* Reverse sektion: billede til højre → luft mod højre kant */
+.info-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.info-section.reverse .info-image img {
+    margin-left: 0;
+    margin-right: 60px;
+    /* samme afstand til højre kant */
+}
+
+
+
+/* RESPONSIV */
+@media (max-width: 900px) {
+    .info-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 6%;
+    }
+
+    .info-section.reverse {
+        flex-direction: column;
+    }
+
+    .info-text ul {
+        text-align: left;
+    }
 }
