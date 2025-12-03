@@ -60,3 +60,44 @@ body {
     max-width: min(1500px, 60vw);
     z-index: 5;
 }
+
+/* --- Knap container (placering i hero) --- */
+.hero-buttons-left {
+    position: absolute;
+    top: 450px;
+    /* justér efter smag */
+    left: 90px;
+    /* justér efter smag */
+    z-index: 20;
+    /* sørger for at knappen ligger OVER billedet */
+}
+
+/* --- Selve knappen --- */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background-color: var(--barcards);
+    /* mørk brun */
+    color: var(--overskrifter);
+    /* lyserød tekst */
+    font-weight: 600;
+    border-radius: 40px;
+    font-size: 22px;
+    text-decoration: none;
+    transition: transform .2s ease;
+}
+
+/* Hover-effekt */
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Hero-baggrundsbillede skal ligge BAG alt andet */
+.hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
