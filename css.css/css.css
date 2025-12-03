@@ -146,3 +146,28 @@ body {
     transform: scale(1.1);
     transition: 0.2s;
 }
+
+
+
+/* Bar under headeren hvor der står LUMINA ONE*/
+
+.product-bar {
+    position: sticky;
+    /* i stedet for fixed */
+    top: var(--header-height);
+    /* starter lige under headeren */
+
+    height: 40px;
+    left: 0;
+    right: 0;
+
+    background-color: var(--barcards);
+    color: var(--overskrifter);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    z-index: 900;
+    /* lidt under header (som nok er 1000) */
+}
