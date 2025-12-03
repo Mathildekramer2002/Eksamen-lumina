@@ -157,7 +157,7 @@ body {
     top: var(--header-height);
     /* starter lige under headeren */
 
-    height: 40px;
+    height: 68px;
     left: 0;
     right: 0;
 
@@ -167,7 +167,68 @@ body {
     align-items: center;
     justify-content: center;
     font-family: var(--font-heading);
-    font-size: 18px;
+    font-size: 60px;
     z-index: 900;
     /* lidt under header (som nok er 1000) */
+}
+
+
+
+
+/* Cards til højtaler*/
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    padding: 40px 6%;
+}
+
+.product-card {
+    background: var(--barcards);
+    /* dine card-farve */
+    border-radius: 24px;
+    padding: 24px;
+    text-align: center;
+    color: white;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.product-card h3 {
+    margin: 16px 0 4px;
+    font-size: 18px;
+    font-weight: 600;
+    color:var(--tekst);
+}
+
+.product-card .color {
+    opacity: 0.8;
+    margin-bottom: 12px;
+    color:var(--tekst);
+}
+
+.product-card .price {
+    font-size: 24px;
+    margin: 12px 0;
+    color:var(--tekst);
+}
+
+.add-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: var(--tekst);
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 10px;
+    transition: 0.2s;
+}
+
+.add-btn:hover {
+    transform: scale(1.05);
 }
