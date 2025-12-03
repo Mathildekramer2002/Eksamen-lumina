@@ -28,46 +28,49 @@ body {
     /* plads til den fixed header */
     background-color: var(--Background);
     box-sizing: border-box;
+    
 }
 
 /* sort/hvid Hero billede */
 .heroBillede {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 89vh;
     overflow: hidden;
-    opacity: 80%;
+    opacity: 70%;
 }
 
 /* Billede med højtaler på podie*/
 .podie {
     position: absolute;
-    bottom: -113px;
+    bottom: -100cpx;
     right: -340px;
     width: 1200px;
     height: 800px;
+    opacity: 100%;
     /* justér størrelsen efter behov */
 }
 
 .hero-copy {
     font-size: 40px;
-    color: var(--barcards);
+    max-width:  min(1000px, 80vw);
+    color: #B38F60;
     font-family: var(--font-heading);
     position: absolute;
-    top: 250px;
+    top: 300px;
     /* afstand fra toppen – justér efter smag */
     left: 90px;
+    right: -90px;
     /* indrykning fra venstre */
-    max-width: min(1500px, 60vw);
     z-index: 5;
 }
 
 /* --- Knap container (placering i hero) --- */
 .hero-buttons-left {
     position: absolute;
-    top: 500px;
+    top: 480px;
     /* justér efter smag */
-    left: 80px;
+    left: 90px;
     /* justér efter smag */
     z-index: 20;
     /* sørger for at knappen ligger OVER billedet */
@@ -153,15 +156,11 @@ body {
 /* Bar under headeren hvor der står LUMINA ONE*/
 
 .product-bar {
-    position: sticky;
-    /* i stedet for fixed */
-    top: var(--header-height);
-    /* starter lige under headeren */
+    /* position: sticky;  fjernes */
+    /* top: var(--header-height); fjernes */
 
     height: 68px;
-    left: 0;
-    right: 0;
-
+    width: 100%;
     background-color: var(--barcards);
     color: var(--overskrifter);
     display: flex;
@@ -169,8 +168,6 @@ body {
     justify-content: center;
     font-family: var(--font-heading);
     font-size: 60px;
-    z-index: 900;
-    /* lidt under header (som nok er 1000) */
 }
 
 
