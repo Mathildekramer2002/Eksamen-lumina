@@ -101,3 +101,48 @@ body {
     object-fit: cover;
     z-index: 0;
 }
+
+/* Header fast øverst */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    background: var(--barcards);
+}
+
+/* Nav inde i headeren fylder hele bredden og fordeler ikonerne */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* venstre og højre */
+    align-items: center;
+    padding: 0 20px;
+}
+
+.left,
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* ikoner i navbaren */
+.icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    filter: invert;
+
+}
+
+/* hovereffekt på ikoner i navbaren*/
+.icon:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
