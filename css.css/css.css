@@ -47,3 +47,16 @@ body {
     height: 800px;
     /* justér størrelsen efter behov */
 }
+
+.hero-copy {
+    font-size: 40px;
+    color: var(--tekst);
+    font-family: var(--font-heading);
+    position: absolute;
+    top: 250px;
+    /* afstand fra toppen – justér efter smag */
+    left: 90px;
+    /* indrykning fra venstre */
+    max-width: min(1500px, 60vw);
+    z-index: 5;
+}
