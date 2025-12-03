@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Farve variabler*/
+:root {
+    --Background: #EFE7DD;
+    --overskrifter: #F4C8E6;
+    --cards: #5A4A42;
+    --barcards: #1E1917;
+    --tekst: #DFD5C3;
+    --header-height: 88px;
+
+    /* NYT: fælles header-højde */
+    :root {
+        --font-heading: poppins, sans-serif;
+        --font-body: quicksand, sans-serif;
+    }
+}
+
+/* Baggrundsfarve */
+body {
+    background-color: var(--Background);
+    margin: 0;
+    padding-top: var(--header-height);
+    /* plads til den fixed header */
+    background-color: var(--Background);
+    box-sizing: border-box;
+}
+
+/* sort/hvid Hero billede */
+.heroBillede {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Billede med højtaler på podie*/
+.podie {
+    position: absolute;
+    bottom: -113px;
+    right: -340px;
+    width: 1200px;
+    height: 800px;
+    /* justér størrelsen efter behov */
+}
