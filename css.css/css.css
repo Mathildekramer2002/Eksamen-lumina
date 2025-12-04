@@ -43,7 +43,7 @@ body {
 /* Billede med højtaler på podie*/
 .podie {
     position: absolute;
-    bottom: -100cpx;
+    top:120px;
     right: -340px;
     width: 1200px;
     height: 800px;
@@ -156,8 +156,8 @@ body {
 /* Bar under headeren hvor der står LUMINA ONE*/
 
 .product-bar {
-    /* position: sticky;  fjernes */
-    /* top: var(--header-height); fjernes */
+    
+    top: var(--header-height);
 
     height: 68px;
     width: 100%;
@@ -231,89 +231,204 @@ body {
     transform: scale(1.05);
 }
 
-/* styling af de 2 billeder med tekst ved siden af*/
 
-/* ————— Info-sektioner med billede + tekst ————— */
 
-.info-section {
-    display: flex;
-    align-items: flex-start;
-    gap: 60px;
-    padding: 60px 0;
+/* SEKTION – baggrund og generel padding */
+.lumina-section {
     background: var(--Background);
-    /* samme lyserøde som resten */
+    /* lyserød baggrund */
+    padding: 4rem 1.5rem;
 }
 
-/* Tekst */
-.info-text {
-    flex: 1;
-    color: #2a2a2a;
+/* RÆKKER – layout for billede + tekstboks */
+.lumina-row {
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    /* centreret + luft under hver række */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
 }
 
-.info-text h2 {
-    font-family: var(--font-heading);
-    font-size: clamp(28px, 3vw, 42px);
-    margin-bottom: 16px;
-}
-
-.info-text p,
-.info-text ul {
-    font-size: 25px;
-    line-height: 1.6;
-}
-
-.info-text ul {
-    padding-left: 50px;
-}
-
-/* Billede – fælles stil */
-.info-image {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.info-image img {
-    width: 400px;
+/* FÆLLES for billede og tekstboks: ENS HØJDE */
+.lumina-image,
+.lumina-box {
     height: 400px;
-    border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* ønsket højde */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* vertikal centrerer indhold */
+}
+
+/* TEKSTBOKSE */
+.lumina-box {
+    background: #2b2422;
+    /* mørk brun */
+    padding: 2.5rem;
+    border-radius: 24px;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    overflow: hidden;
+    /* hvis der lige er lidt for meget tekst */
+    align-items: flex-start;
+    /* tekst venstrestillet, ikke centreret horisontalt */
+}
+
+.lumina-box h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* LISTE I TEKSTBOKS 2 */
+.lumina-box ul {
+    padding-left: 1.2rem;
+    margin: 1rem 0 0 0;
+}
+
+.lumina-box li {
+    margin-bottom: 0.5rem;
+}
+
+/* BILLEDER – udfylder rammen pænt */
+.lumina-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    /* beskærer billedet pænt i stedet for at strække */
+    border-radius: 24px;
+    display: block;
 }
 
-/* Normal sektion: billede til venstre → luft mod venstre kant */
-.info-section .info-image img {
-    margin-left: 60px;
-    /* afstand til venstre kant */
-    margin-right: 0;
-}
-
-/* Reverse sektion: billede til højre → luft mod højre kant */
-.info-section.reverse {
-    flex-direction: row-reverse;
-}
-
-.info-section.reverse .info-image img {
-    margin-left: 0;
-    margin-right: 60px;
-    /* samme afstand til højre kant */
-}
-
-
-
-/* RESPONSIV */
+/* RESPONSIVT – på mobil stakkes rækkerne */
 @media (max-width: 900px) {
-    .info-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 40px 6%;
+    .lumina-row {
+        grid-template-columns: 1fr;
     }
 
-    .info-section.reverse {
-        flex-direction: column;
-    }
-
-    .info-text ul {
-        text-align: left;
+    /* I række 2 byttes rækkefølge så billedet kommer først på mobil */
+    .lumina-row:nth-child(2) .lumina-image {
+        order: -1;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* styling af footer */
+.footer {
+    background-color: var(--barcards);
+    /* mørk brun */
+    color: var(--tekst);
+    /* lys beige/rosa tekst */
+    padding: 40px 6%;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+/* Venstre kolonne – tekst + input */
+.footer-newsletter p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* “pill” input */
+.newsletter input {
+    width: 100%;
+    max-width: 340px;
+    padding: 16px 24px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+    background: #3f3834;
+    color: var(--overskrifter);
+    /* lyserød tekst */
+    font-size: 18px;
+}
+
+/* placeholder-tekst */
+.newsletter input::placeholder {
+    color: var(--overskrifter);
+}
+
+/* Midterste kolonne – SoMe */
+.footer-social h4,
+.footer-contact h4 {
+    font-size: 22px;
+    margin-bottom: 16px;
+    color: var(--overskrifter);
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #d4ccbe;
+    /* lys “badge” */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.social-icons a img {
+    width: 28px;
+    height: 28px;
+}
+
+.social-icons a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Højre kolonne – kontaktinfo */
+.footer-contact p {
+    font-size: 18px;
+    margin: 4px 0;
+}
+
+
