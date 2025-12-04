@@ -13,7 +13,7 @@
     --tekst: #DFD5C3;
     --header-height: 88px;
 
-    /* NYT: fælles header-højde */
+ 
     :root {
         --font-heading: poppins, sans-serif;
         --font-body: quicksand, sans-serif;
@@ -232,6 +232,8 @@ body {
 }
 
 
+/* Billeder og tekst under rækken med højtalere */
+
 
 /* SEKTION – baggrund og generel padding */
 .lumina-section {
@@ -272,6 +274,7 @@ body {
     font-size: 1.2rem;
     line-height: 1.6;
     overflow: hidden;
+    font-family: var(--font-body);
     /* hvis der lige er lidt for meget tekst */
     align-items: flex-start;
     /* tekst venstrestillet, ikke centreret horisontalt */
@@ -304,39 +307,63 @@ body {
     display: block;
 }
 
-/* RESPONSIVT – på mobil stakkes rækkerne */
-@media (max-width: 900px) {
-    .lumina-row {
-        grid-template-columns: 1fr;
-    }
 
-    /* I række 2 byttes rækkefølge så billedet kommer først på mobil */
-    .lumina-row:nth-child(2) .lumina-image {
-        order: -1;
-    }
+
+
+/* Specifikationer */
+.lumina-spec-section {
+    background: var(--Background);
+    padding: 4rem 1.5rem;
 }
 
+/* Selve boksen */
+.spec-box {
+    width: 800px;
+    height: 1200px;
+    background: #231f1d;
+    border-radius: 40px;
+    margin: 0;
+    /* centrerer boksen */
+    padding: 3rem 4rem;
+    color: #e8dfd5;
+    display: flex;
+    flex-direction: column;
+}
 
+/* Overskrift */
+.spec-box h2 {
+    font-size: 64px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 2.5rem 0;
+}
 
+/* Liste med specifikationer */
+.spec-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
 
+/* Hver række med ikon + tekst */
+.spec-box li {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 32px;
+    /* brødtekst-størrelse */
+    line-height: 1.5;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* Ikonerne til venstre */
+.spec-box li img {
+    width: 48px;
+    height: auto;
+    flex-shrink: 0;
+}
 
 
 
