@@ -1,112 +1,98 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Farve variabler*/
+/* Variabler */
 :root {
-    --Background:#FFE3F2;
+    --Background: #5C4841;
     --overskrifter: #F4C8E6;
-    --cards: #5A4A42;
-    --barcards: #1E1917;
-    --tekst: #DFD5C3;
+    --cards: #FFEBF9;
+    --Lumina:#FFEBF9;
+    --tekst: #3B2F2F;
+    --bar:#18120F;
+    --overskrift: #18120F;
+    --knap: #18120F;
     --header-height: 88px;
 
- 
-    :root {
-        --font-heading: poppins, sans-serif;
-        --font-body: quicksand, sans-serif;
-    }
+    --font-heading: "Poppins", sans-serif;
+    --font-body: "Quicksand", sans-serif;
 }
 
-/* Baggrundsfarve */
+/* Generelt */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     background-color: var(--Background);
-    margin: 0;
-    padding-top: var(--header-height);
-    /* plads til den fixed header */
-    background-color: var(--Background);
-    box-sizing: border-box;
-    
+    padding-top: 0px;
+    font-family: var(--font-body);
 }
 
-/* sort/hvid Hero billede */
-.heroBillede {
+.hero {
     position: relative;
-    width: 100vw;
-    height: 89vh;
+    width: 100%;
+    height: 720px;
     overflow: hidden;
-    opacity: 70%;
+    background-color: var(--cards);
 }
 
-/* Billede med højtaler på podie*/
+
 .podie {
     position: absolute;
-    top:120px;
-    right: -340px;
-    width: 1200px;
+    top: 70px;
+    right:-280px;
+    z-index: 10;
+    width: auto;
     height: 800px;
-    opacity: 100%;
-    /* justér størrelsen efter behov */
 }
 
+
+/* Hero tekst */
 .hero-copy {
-    font-size: 40px;
-    max-width:  min(1000px, 80vw);
-    color: #B38F60;
+    font-size: 32px;
+    max-width: min(1000px, 80vw);
+    color: var(--background);
     font-family: var(--font-heading);
     position: absolute;
-    top: 300px;
-    /* afstand fra toppen – justér efter smag */
+    top: 240px;
     left: 90px;
-    right: -90px;
-    /* indrykning fra venstre */
     z-index: 5;
 }
 
-/* --- Knap container (placering i hero) --- */
+/* Knapper i hero */
 .hero-buttons-left {
     position: absolute;
     top: 480px;
-    /* justér efter smag */
     left: 90px;
-    /* justér efter smag */
     z-index: 20;
-    /* sørger for at knappen ligger OVER billedet */
 }
 
-/* --- Selve knappen --- */
 .btn {
     display: inline-block;
     padding: 14px 32px;
-    background-color: var(--barcards);
-    /* mørk brun */
-    color: var(--tekst);
-    /* lyserød tekst */
+    background-color: var(--knap);
+    color: var(--lumina);
     font-weight: 600;
     border-radius: 40px;
     font-size: 22px;
     text-decoration: none;
-    transition: transform .2s ease;
+    transition: transform .2s;
 }
 
-/* Hover-effekt */
 .btn:hover {
     transform: scale(1.05);
 }
 
-/* Hero-baggrundsbillede skal ligge BAG alt andet */
-.hero-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
 
-/* Header fast øverst */
+
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -116,15 +102,16 @@ body {
     z-index: 1000;
     display: flex;
     align-items: center;
-    background: var(--barcards);
+    background-color: var(--bar);
+    opacity: 100%;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    
 }
 
-/* Nav inde i headeren fylder hele bredden og fordeler ikonerne */
 .navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    /* venstre og højre */
     align-items: center;
     padding: 0 20px;
 }
@@ -136,33 +123,25 @@ body {
     gap: 20px;
 }
 
-/* ikoner i navbaren */
 .icon {
     width: 32px;
     height: 32px;
     cursor: pointer;
-    filter: invert;
-
+    filter: invert(1);
+    transition: transform .2s;
+    color: var(--tekst);
 }
 
-/* hovereffekt på ikoner i navbaren*/
 .icon:hover {
     transform: scale(1.1);
-    transition: 0.2s;
 }
 
-
-
-/* Bar under headeren hvor der står LUMINA ONE*/
-
+/* Bar under header */
 .product-bar {
-    
-    top: var(--header-height);
-
     height: 68px;
     width: 100%;
-    background-color: var(--barcards);
-    color: var(--overskrifter);
+    background-color: var(--bar);
+    color: var(--Lumina);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,10 +149,7 @@ body {
     font-size: 60px;
 }
 
-
-
-
-/* Cards til højtaler*/
+/* Produktkort */
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -183,16 +159,14 @@ body {
 
 .product-card {
     background: var(--barcards);
-    /* dine card-farve */
     border-radius: 24px;
     padding: 24px;
     text-align: center;
-    color: white;
+    color: var(--tekst);
 }
 
 .product-card img {
     width: 100%;
-    height: auto;
     border-radius: 12px;
 }
 
@@ -200,19 +174,16 @@ body {
     margin: 16px 0 4px;
     font-size: 18px;
     font-weight: 600;
-    color:var(--tekst);
 }
 
 .product-card .color {
     opacity: 0.8;
     margin-bottom: 12px;
-    color:var(--tekst);
 }
 
 .product-card .price {
     font-size: 24px;
     margin: 12px 0;
-    color:var(--tekst);
 }
 
 .add-btn {
@@ -220,54 +191,41 @@ body {
     padding: 10px 20px;
     border-radius: 20px;
     background: var(--tekst);
-    color: #000000;
+    color: #000;
     text-decoration: none;
     font-weight: 600;
-    margin-top: 10px;
-    transition: 0.2s;
+    transition: transform .2s;
 }
 
 .add-btn:hover {
     transform: scale(1.05);
 }
 
-
-/* Billeder og tekst under rækken med højtalere */
-
-
-/* SEKTION – baggrund og generel padding */
+/* Sektion med billede og tekst */
 .lumina-section {
     background: var(--Background);
-    /* lyserød baggrund */
     padding: 4rem 1.5rem;
 }
 
-/* RÆKKER – layout for billede + tekstboks */
 .lumina-row {
     max-width: 1200px;
     margin: 0 auto 4rem auto;
-    /* centreret + luft under hver række */
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2.5rem;
     align-items: center;
 }
 
-/* FÆLLES for billede og tekstboks: ENS HØJDE */
 .lumina-image,
 .lumina-box {
     height: 400px;
-    /* ønsket højde */
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* vertikal centrerer indhold */
 }
 
-/* TEKSTBOKSE */
 .lumina-box {
     background: #2b2422;
-    /* mørk brun */
     padding: 2.5rem;
     border-radius: 24px;
     color: #fff;
@@ -275,40 +233,30 @@ body {
     line-height: 1.6;
     overflow: hidden;
     font-family: var(--font-body);
-    /* hvis der lige er lidt for meget tekst */
     align-items: flex-start;
-    /* tekst venstrestillet, ikke centreret horisontalt */
 }
 
 .lumina-box h2 {
-    margin-top: 0;
     margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: 700;
 }
 
-/* LISTE I TEKSTBOKS 2 */
 .lumina-box ul {
     padding-left: 1.2rem;
-    margin: 1rem 0 0 0;
+    margin-top: 1rem;
 }
 
 .lumina-box li {
     margin-bottom: 0.5rem;
 }
 
-/* BILLEDER – udfylder rammen pænt */
 .lumina-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* beskærer billedet pænt i stedet for at strække */
     border-radius: 24px;
-    display: block;
 }
-
-
-
 
 /* Specifikationer */
 .lumina-spec-section {
@@ -316,64 +264,109 @@ body {
     padding: 4rem 1.5rem;
 }
 
-/* Selve boksen */
 .spec-box {
-    width: 800px;
-    height: 1200px;
+    width: 1600px;
+    max-width: 100%;
+    height: 540px;
     background: #231f1d;
     border-radius: 40px;
-    margin: 0;
-    /* centrerer boksen */
+    margin: 0 auto;
     padding: 3rem 4rem;
     color: #e8dfd5;
     display: flex;
     flex-direction: column;
 }
 
-/* Overskrift */
 .spec-box h2 {
     font-size: 64px;
     font-weight: 700;
     text-align: center;
-    margin: 0 0 2.5rem 0;
+    margin-bottom: 2.5rem;
 }
 
-/* Liste med specifikationer */
 .spec-box ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
 
-/* Hver række med ikon + tekst */
 .spec-box li {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     font-size: 32px;
-    /* brødtekst-størrelse */
     line-height: 1.5;
 }
 
-/* Ikonerne til venstre */
 .spec-box li img {
     width: 48px;
     height: auto;
-    flex-shrink: 0;
 }
 
+/* Trustpilot */
+.lumina-reviews {
+    background: var(--Background);
+    padding: 4rem 1.5rem;
+}
 
+.reviews-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
+}
 
+.review-card {
+    background: #231f1d;
+    border-radius: 32px;
+    padding: 2.5rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-/* styling af footer */
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.review-logo-img {
+    height: 160px;
+    width: auto;
+}
+
+.review-text {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    color: #f5ede1;
+}
+
+.review-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.review-stars {
+    font-size: 26px;
+    letter-spacing: 4px;
+    color: #2ecc71;
+}
+
+.review-name {
+    font-size: 20px;
+}
+
+/* Footer */
 .footer {
     background-color: var(--barcards);
-    /* mørk brun */
     color: var(--tekst);
-    /* lys beige/rosa tekst */
     padding: 40px 6%;
 }
 
@@ -391,13 +384,11 @@ body {
     min-width: 220px;
 }
 
-/* Venstre kolonne – tekst + input */
 .footer-newsletter p {
     font-size: 20px;
     margin-bottom: 20px;
 }
 
-/* “pill” input */
 .newsletter input {
     width: 100%;
     max-width: 340px;
@@ -407,16 +398,13 @@ body {
     outline: none;
     background: #3f3834;
     color: var(--overskrifter);
-    /* lyserød tekst */
     font-size: 18px;
 }
 
-/* placeholder-tekst */
 .newsletter input::placeholder {
     color: var(--overskrifter);
 }
 
-/* Midterste kolonne – SoMe */
 .footer-social h4,
 .footer-contact h4 {
     font-size: 22px;
@@ -435,11 +423,10 @@ body {
     height: 60px;
     border-radius: 50%;
     background: #d4ccbe;
-    /* lys “badge” */
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform .2s ease, box-shadow .2s ease;
+    transition: .2s;
 }
 
 .social-icons a img {
@@ -452,10 +439,7 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Højre kolonne – kontaktinfo */
 .footer-contact p {
     font-size: 18px;
     margin: 4px 0;
 }
-
-
