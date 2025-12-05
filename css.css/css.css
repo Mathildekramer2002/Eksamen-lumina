@@ -10,13 +10,17 @@
     --Background: #5C4841;
     --overskrifter: #F4C8E6;
     --cards: #FFEBF9;
-    --Lumina:#FFEBF9;
     --tekst: #3B2F2F;
     --bar:#18120F;
     --overskrift: #18120F;
     --knap: #18120F;
+    --lys-tekst: #FFEBF9;
+    --mørk-tekst: #3B2F2F;
+
     --header-height: 88px;
 
+
+  
     --font-heading: "Poppins", sans-serif;
     --font-body: "Quicksand", sans-serif;
 }
@@ -78,7 +82,7 @@ body {
     display: inline-block;
     padding: 14px 32px;
     background-color: var(--knap);
-    color: var(--lumina);
+    color: var(--lys-tekst);
     font-weight: 600;
     border-radius: 40px;
     font-size: 22px;
@@ -92,7 +96,7 @@ body {
 
 
 
-/* Header */
+/* Selve headerbaren */
 .header {
     position: fixed;
     top: 0;
@@ -103,45 +107,81 @@ body {
     display: flex;
     align-items: center;
     background-color: var(--bar);
-    opacity: 100%;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
     
 }
 
+/* Navbar: 3 kolonner – burger | logo | kurv */
 .navbar {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    /* venstre, midte, højre */
     align-items: center;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
-.left,
-.right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+/* Knap til burger (uden default styling) */
+.nav-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    justify-self: start;
 }
 
+/* Kurv-link helt til højre */
+.cart-link {
+    justify-self: end;
+}
+
+/* Ikoner (burger + kurv) */
 .icon {
     width: 32px;
     height: 32px;
-    cursor: pointer;
-    filter: invert(1);
+    display: block;
     transition: transform .2s;
-    color: var(--tekst);
 }
 
 .icon:hover {
     transform: scale(1.1);
 }
 
+/* Logo i midten */
+.logo {
+    justify-self: center;
+    height: 60px;
+    /* justér størrelse her */
+    width: auto;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Bar under header */
 .product-bar {
     height: 68px;
     width: 100%;
     background-color: var(--bar);
-    color: var(--Lumina);
+    color: var(--lys-tekst);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,11 +198,11 @@ body {
 }
 
 .product-card {
-    background: var(--barcards);
+    background: var(--cards);
     border-radius: 24px;
     padding: 24px;
     text-align: center;
-    color: var(--tekst);
+    color: var(--mørk-tekst);
 }
 
 .product-card img {
@@ -190,8 +230,8 @@ body {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 20px;
-    background: var(--tekst);
-    color: #000;
+    background: var(--knap);
+    color: var(--lys-tekst);
     text-decoration: none;
     font-weight: 600;
     transition: transform .2s;
@@ -362,6 +402,17 @@ body {
 .review-name {
     font-size: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /* Footer */
 .footer {
