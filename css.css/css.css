@@ -50,11 +50,11 @@ body {
 
 .podie {
     position: absolute;
-    top: 70px;
-    right:-280px;
+    top: -200px;
+    right:-500px;
     z-index: 10;
     width: auto;
-    height: 800px;
+    height: 1200px;
 }
 
 
@@ -65,15 +65,15 @@ body {
     color: var(--background);
     font-family: var(--font-heading);
     position: absolute;
-    top: 240px;
+    top: 140px;
     left: 90px;
     z-index: 5;
 }
 
-/* Knapper i hero */
+/* Knap i hero */
 .hero-buttons-left {
     position: absolute;
-    top: 480px;
+    top: 440px;
     left: 90px;
     z-index: 20;
 }
@@ -274,9 +274,52 @@ body {
 
 
 
+/* Sektion med billede af højtaler og dens specifikationer*/
+.icon-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* sikrer at alle starter samme sted */
+    gap: 120px;
+    margin-bottom: 10px;
+    margin-top:70px;
+}
 
+/* hver ikon-boks */
+.icon-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 160px;
+    /* sørger for ens bredde → teksten aligner */
+}
 
+/* IKONER — ENS HØJDE */
+.icon-item img {
+    height: 60px;
+    /* ← gør ALLE ikoner lige høje */
+    width: auto;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
 
+/* TEKST — samme stil for alle */
+.icon-item p {
+    font-size: 18px;
+    color: #E5D6C8;
+    margin: 0;
+}
+
+/* Produktbilledet */
+.feature-image img {
+    width: 420px;
+    /* tilpas efter dit design */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
 
 
 
@@ -383,14 +426,6 @@ body {
 
 
 
-
-
-
-
-
-
-
-
 /* Specifikationer */
 .lumina-spec-section {
     background: var(--Background);
@@ -437,6 +472,9 @@ body {
     height: auto;
 }
 
+
+
+
 /* Trustpilot */
 .lumina-reviews {
     background: var(--Background);
@@ -459,25 +497,25 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 480px;
 }
 
 .review-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0px;
 }
 
 .review-logo-img {
-    height: 160px;
-    width: auto;
+    height: 100px;
 }
 
 .review-text {
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.8;
-    margin-bottom: 2.5rem;
+    margin-bottom: 5px;
     color: #f5ede1;
+    margin-top: 10px;
 }
 
 .review-footer {
@@ -509,7 +547,7 @@ body {
 
 /* Footer */
 .footer {
-    background-color: var(--barcards);
+    background-color: var(--bar);
     color: var(--tekst);
     padding: 40px 6%;
 }
@@ -531,6 +569,7 @@ body {
 .footer-newsletter p {
     font-size: 20px;
     margin-bottom: 20px;
+    color: var(--lys-tekst);
 }
 
 .newsletter input {
@@ -541,19 +580,19 @@ body {
     border: none;
     outline: none;
     background: #3f3834;
-    color: var(--overskrifter);
+    color: var(--lys-tekst);
     font-size: 18px;
 }
 
 .newsletter input::placeholder {
-    color: var(--overskrifter);
+    color: var(--lys-tekst);
 }
 
 .footer-social h4,
 .footer-contact h4 {
     font-size: 22px;
     margin-bottom: 16px;
-    color: var(--overskrifter);
+    color: var(--lys-tekst);
 }
 
 .social-icons {
@@ -586,4 +625,5 @@ body {
 .footer-contact p {
     font-size: 18px;
     margin: 4px 0;
+    color: var(--lys-tekst);
 }
