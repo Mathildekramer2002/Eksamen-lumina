@@ -252,6 +252,10 @@ body {
     text-align: center;
     color: var(--lys-tekst);
 }
+.product-card:hover {
+    transform: scale(1.02);
+    transition: transform .2s;
+}
 
 .product-card img {
     width: 100%;
@@ -322,6 +326,7 @@ body {
     /* skjuler evt. overskydende */
 }
 
+
 .scroll-container {
     display: flex;
     gap: 20px;
@@ -329,6 +334,9 @@ body {
     scroll-behavior: smooth;
     padding: 20px;
     padding-left: 100px;
+}
+.scroll-container-hover {
+    transform: scale(1.1);
 }
 
 .scroll-container::-webkit-scrollbar {
