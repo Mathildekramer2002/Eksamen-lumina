@@ -7,11 +7,11 @@
 
 /* Variabler */
 :root {
-    --Background: #5C4841;
+    --Background: #FFF4E4;
     --overskrifter: #FFF4E4;
-    --cards: #FFF4E4;
+    --cards: #18120F;
     --tekst: #3B2F2F;
-    --bar:#18120F;
+    --bar: #18120F;
     --overskrift: #18120F;
     --knap: #18120F;
     --lys-tekst: #FFF4E4;
@@ -19,8 +19,6 @@
 
     --header-height: 88px;
 
-
-  
     --font-heading: "Poppins", sans-serif;
     --font-body: "Quicksand", sans-serif;
 }
@@ -35,37 +33,37 @@ body {
 
 body {
     background-color: var(--Background);
-    padding-top: 0px;
+    padding-top: 0;
     font-family: var(--font-body);
 }
 
+/* HERO */
 .hero {
     position: relative;
     width: 100%;
     height: 720px;
     overflow: hidden;
-    background-color: var(--cards);
+    background-color: var(--Background);
+    /* rettet navn */
 }
-
 
 .podie {
     position: absolute;
     top: -200px;
-    right:-500px;
+    right: -500px;
     z-index: 10;
     width: auto;
     height: 1200px;
 }
 
-
 /* Hero tekst */
 .hero-copy {
     font-size: 32px;
-    max-width: min(1000px, 80vw);
-    color: var(--background);
+    max-width: min(1000px, 40vw);
+    color: var(--overskrift);
     font-family: var(--font-heading);
     position: absolute;
-    top: 140px;
+    top: 220px;
     left: 90px;
     z-index: 5;
 }
@@ -73,7 +71,7 @@ body {
 /* Knap i hero */
 .hero-buttons-left {
     position: absolute;
-    top: 440px;
+    top: 400px;
     left: 90px;
     z-index: 20;
 }
@@ -94,8 +92,7 @@ body {
     transform: scale(1.05);
 }
 
-
-/* Selve headerbaren */
+/* HEADERBAR */
 .header {
     position: fixed;
     top: 0;
@@ -106,7 +103,6 @@ body {
     display: flex;
     align-items: center;
     background-color: var(--bar);
-
 }
 
 /* Navbar: 3 kolonner – burger | logo | kurv */
@@ -120,18 +116,26 @@ body {
     padding: 0 24px;
 }
 
-/* Knap til burger (uden default styling) */
-.nav-btn {
-    background: none;
-    border: none;
+/* BURGER KNAP */
+.burger {
+    width: 32px;
+    height: 24px;
     padding: 0;
+    border: none;
+    background: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     cursor: pointer;
-    justify-self: start;
 }
 
-/* Kurv-link helt til højre */
-.cart-link {
-    justify-self: end;
+/* De tre streger */
+.burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #f8ecd9;
+    border-radius: 2px;
 }
 
 /* Ikoner (burger + kurv) */
@@ -146,17 +150,79 @@ body {
     transform: scale(1.1);
 }
 
+/* Kurv-link helt til højre */
+.cart-link {
+    justify-self: end;
+}
+
 /* Logo i midten */
 .logo {
     justify-self: center;
-    height: 60px;
-    /* justér størrelse her */
+    height: 40px;
     width: auto;
     display: block;
 }
 
+/* BURGER-MENU (side-menu + overlay) */
 
+/* Selve menuen der glider ind */
+.side-menu {
+    position: fixed;
+    top: var(--header-height);
+    /* lige under headeren */
+    left: 0;
+    width: 240px;
+    max-width: 80vw;
+    height: calc(100vh - var(--header-height));
+    background: var(--cards);
+    color: var(--lys-tekst);
+    padding: 32px 24px;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+    /* skjult ud til venstre */
+    transition: transform 0.3s ease;
+    z-index: 900;
+}
 
+.side-menu h2 {
+    margin-bottom: 24px;
+    font-family: var(--font-heading);
+    font-size: 20px;
+}
+
+.side-menu a {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--lys-tekst);
+    text-decoration: none;
+    font-size: 16px;
+    font-family: var(--font-body);
+}
+
+.side-menu a:hover {
+    text-decoration: underline;
+}
+
+/* JS tilføjer .open klassen */
+.side-menu.open {
+    transform: translateX(0);
+}
+
+/* Mørkt overlay bag menuen */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 800;
+}
+
+.menu-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
 
 /* Bar under header */
 .product-bar {
@@ -184,7 +250,7 @@ body {
     border-radius: 24px;
     padding: 24px;
     text-align: center;
-    color: var(--mørk-tekst);
+    color: var(--lys-tekst);
 }
 
 .product-card img {
@@ -212,8 +278,8 @@ body {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 20px;
-    background: var(--knap);
-    color: var(--lys-tekst);
+    background: var(--lys-tekst);
+    color: var(--mørk-tekst);
     text-decoration: none;
     font-weight: 600;
     transition: transform .2s;
@@ -223,19 +289,30 @@ body {
     transform: scale(1.05);
 }
 
+/* Overskrift "kunder" */
 .kunder {
     text-align: center;
-    font-size: 35px;
-    margin-top: 20px;
-    padding:100px;
-    color: var(--overskrifter);
+    font-size: 15px;
+    margin-top: 0;
+    padding: 40px;
+    color: var(--mørk-tekst);
     font-family: var(--font-body);
-
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
-
-
+.product-bar2 {
+    height: 68px;
+    width: 100%;
+    background-color: var(--bar);
+    color: var(--lys-tekst);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-size: 30px;
+}
 
 /* scroll bar */
 .lumina-scroll-gallery {
@@ -249,9 +326,7 @@ body {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    /* gør det scrollbart til siden */
     scroll-behavior: smooth;
-    /* smooth scroll */
     padding: 20px;
     padding-left: 100px;
 }
@@ -262,27 +337,21 @@ body {
 }
 
 .scroll-container img {
-    height: 450px;
-    width: 250px;
-    /* justér efter ønske */
+    height: 360px;
+    width: 200px;
     flex-shrink: 0;
-    /* gør billederne faste i størrelsen */
-    border-radius: 16px;
+    border-radius: 20px;
     object-fit: cover;
 }
 
-
-
-
-/* Sektion med billede af højtaler og dens specifikationer*/
+/* Sektion med ikon-specs */
 .icon-row {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* sikrer at alle starter samme sted */
     gap: 120px;
     margin-bottom: 10px;
-    margin-top:70px;
+    margin-top: 70px;
 }
 
 /* hver ikon-boks */
@@ -292,14 +361,12 @@ body {
     justify-content: flex-start;
     align-items: center;
     text-align: center;
-    width: 160px;
-    /* sørger for ens bredde → teksten aligner */
+    width: 100px;
 }
 
 /* IKONER — ENS HØJDE */
 .icon-item img {
-    height: 60px;
-    /* ← gør ALLE ikoner lige høje */
+    height: 40px;
     width: auto;
     object-fit: contain;
     margin-bottom: 10px;
@@ -308,172 +375,17 @@ body {
 /* TEKST — samme stil for alle */
 .icon-item p {
     font-size: 18px;
-    color: #E5D6C8;
+    color: var(--mørk-tekst);
     margin: 0;
 }
 
 /* Produktbilledet */
 .feature-image img {
-    width: 420px;
-    /* tilpas efter dit design */
+    width: 400px;
     height: auto;
     display: block;
     margin: 0 auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* billeder og tekstbokse */
-/* Sektion med de fire kort (billede + tekst) */
-.lumina-strip {
-    background: var(--Background);
-    /* samme baggrund som resten */
-    padding: 40px 6%;
-}
-
-/* Grid som ved produkterne */
-.lumina-strip-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 40px;
-}
-
-/* Fælles kort-styling – matcher .product-card */
-.strip-card {
-    background: var(--barcards);
-    border-radius: 24px;
-    padding: 24px;
-    color: var(--tekst);
-    height: 360px;
-    /* samme højde som produktkortene */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-/* Billed-kort – billedet fylder hele kortet */
-.strip-image {
-    padding: 0;
-    /* ingen indre padding om billedet */
-}
-
-.strip-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 24px;
-    display: block;
-}
-
-/* Tekst-kort – samme typografi som produktkort, bare venstrestillet */
-.strip-text {
-    text-align: left;
-    font-family: var(--font-body);
-    background: var(--cards);
-    height: 420px;
-}
-
-.strip-text h2 {
-    font-family: var(--font-heading);
-    font-size: 22px;
-    margin-bottom: 12px;
-    position: relative;
-}
-
-.strip-text p,
-.strip-text li {
-    font-size: 16px;
-    line-height: 1.6;
-    position: center;
-}
-
-.strip-text ul {
-    padding-left: 1.2rem;
-    margin-top: 8px;
-}
-
-
-
-
-
-
-
-
-
-
-/* Specifikationer */
-.lumina-spec-section {
-    background: var(--Background);
-    padding: 4rem 1.5rem;
-}
-
-.spec-box {
-    width: 1600px;
-    max-width: 100%;
-    height: 540px;
-    background: #231f1d;
-    border-radius: 40px;
-    margin: 0 auto;
-    padding: 3rem 4rem;
-    color: #e8dfd5;
-    display: flex;
-    flex-direction: column;
-}
-
-.spec-box h2 {
-    font-size: 64px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-.spec-box ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-.spec-box li {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    font-size: 32px;
-    line-height: 1.5;
-}
-
-.spec-box li img {
-    width: 48px;
-    height: auto;
-}
-
-
-
 
 /* Trustpilot */
 .lumina-reviews {
@@ -503,7 +415,7 @@ body {
 .review-header {
     display: flex;
     align-items: center;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .review-logo-img {
@@ -533,17 +445,6 @@ body {
 .review-name {
     font-size: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* Footer */
 .footer {

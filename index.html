@@ -9,24 +9,39 @@
 </head>
 
 <!-- HEADER med navigationer -->
-<header class="header">
-    <nav class="navbar">
-        <!-- Venstre: burger -->
-        <button class="nav-btn">
-            <img src="/Images/Menupink.png" class="icon" alt="Menu">
-        </button>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <nav class="navbar">
 
-        <!-- Midten: logo -->
-        <img src="/Images/LUMINA AUDIOlogo.png" class="logo" alt="Lumina logo">
+            <!-- Burger menu knap -->
+            <button id="burgerBtn" class="burger" aria-label="Åbn menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-        <!-- Højre: kurv -->
-        <a href="kurv.html" class="cart-link">
-            <img src="/Images/kurvpink.png" class="icon" alt="Kurv">
-        </a>
+            <!-- Logo i midten -->
+            <img src="/Images/LUMINA-beige-logo.svg" alt="Lumina Audio" class="logo">
+
+            <!-- Kurv til højre -->
+            <a href="#" class="cart-link">
+                <img src="/Images/kurv.svg" alt="Kurv" class="icon">
+            </a>
+
+        </nav>
+    </header>
+
+    <!-- SLIDE-IN MENU -->
+    <nav id="sideMenu" class="side-menu">
+        <h2>Alle produkter</h2>
+        <a href="#">Højtalere</a>
+        <a href="#">Høretelefoner</a>
+        <a href="#">Tilbehør</a>
     </nav>
-</header>
 
-
+    <!-- MØRKT OVERLAY BAG MENUEN -->
+    <div id="menuOverlay" class="menu-overlay"></div>
 
 <body>
 
@@ -84,12 +99,6 @@
     </div>
 </section>
 
-<!-- bar under header, med skrift-->
-<div class="product-bar">
-    Dit liv, din lyd, over alt
-</div>
-
-
 <div class="kunder">
 
 <h2>Se, hvordan vores kunder bruger LUMINA ONE til at skabe den perfekte stemning – uanset hvor de er.</h2>
@@ -99,17 +108,48 @@
 <!-- Scrollbar med billeder fra kunder -->
 <section class="scroll-gallery">
     <div class="scroll-container">
+        
 
+<div class="hover-item">
         <img src="/Images/fest.png" alt="">
+    </div>
+
+
+<div class="hover-item">    
         <img src="/Images/køkken.png" alt="">
+</div>
+
+<div class="hover-item">
         <img src="/Images/soveværelse.png" alt="">
+        </div>
+
+<div class="hover-item">    
         <img src="/Images/yoga.png" alt="">
+        </div>
+
+<div class="hover-item">
         <img src="/Images/drenge.png" alt="">
+        </div>
+
+        <div class="hover-item">
         <img src="/Images/indretning.png" alt="">
+        </div>
+
+        <div class="hover-item">
         <img src="/Images/party.png" alt="">
+        </div>
+
+        <div class="hover-item">
         <img src="/Images/work.png" alt="">
+        </div>
+
+        <div class="hover-item">
         <img src="/Images/picnin.png" alt="">
+        </div>
+
+        <div class="hover-item">
         <img src="/Images/clean.png" alt="">
+        </div>
 
 
     </div>
@@ -120,22 +160,22 @@
 
     <div class="icon-row">
         <div class="icon-item">
-            <img src="/kg.svg" alt="4,5kg">
+            <img src="/Images/brunkg.svg" alt="4,5kg">
             <p>4,5kg</p>
         </div>
 
         <div class="icon-item">
-            <img src="/batteri.svg" alt="Batteri">
+            <img src="/Images/brunbatteri.svg" alt="Batteri">
             <p>op til 18 timers spilletid</p>
         </div>
 
         <div class="icon-item">
-            <img src="/bluetooth.svg" alt="Bluetooth">
+            <img src="/Images/brunbluetooth.svg" alt="Bluetooth">
             <p>Bluetooth</p>
         </div>
 
         <div class="icon-item">
-            <img src="/connect.svg" alt="Social connect">
+            <img src="/Images/brunconnect.svg" alt="Social connect">
             <p>Social connect</p>
         </div>
     </div>
@@ -145,87 +185,6 @@
     </div>
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- trustpilot -->
-
-<section class="lumina-reviews">
-    <div class="reviews-grid">
-
-        <!-- Kort 1 -->
-        <article class="review-card">
-            <div class="review-header">
-    
-                <img src="/Images/trustpilot1.png" alt="Trustpilot" class="review-logo-img">
-            </div>
-
-            <p class="review-text">
-                Overraskende god lyd for størrelsen! Lumina One står fast i køkkenet hos os,
-                og den fylder rummet med en varm, blød lyd. Designet er så pænt, at den
-                nærmest fungerer som dekoration.
-            </p>
-
-            <div class="review-footer">
-                <div class="review-stars">★★★★★</div>
-                <div class="review-name">Anna Sørensen</div>
-            </div>
-        </article>
-
-        <!-- Kort 2 -->
-        <article class="review-card">
-            <div class="review-header">
-                <img src="/Images/trustpilot1.png" alt="Trustpilot" class="review-logo-img">
-            </div>
-
-            <p class="review-text">
-                Utrolig nem at bruge og så flot lavet. Jeg tager den med rundt i hele lejligheden,
-                og batteriet holder imponerende længe. Helt klart pengene værd.
-            </p>
-
-            <div class="review-footer">
-                <div class="review-stars">★★★★★</div>
-                <div class="review-name">Sofie Andersen</div>
-            </div>
-        </article>
-
-        <!-- Kort 3 -->
-        <article class="review-card">
-            <div class="review-header">
-                <img src="/Images/trustpilot1.png" alt="Trustpilot" class="review-logo-img">
-            </div>
-
-            <p class="review-text">
-                Den lever 100% op til det, den lover. Jeg har allerede haft min LUMINA one med
-                til både fest og flere sammenkomster, og den spiller stadig præcis som da jeg
-                pakkede den ud. God lyd, stærkt batteri og virkelig solid kvalitet.
-            </p>
-
-            <div class="review-footer">
-                <div class="review-stars">★★★★★</div>
-                <div class="review-name">Sandra Jensen</div>
-            </div>
-        </article>
-
-    </div>
-</section>
-
-
-
-
-
-
 
 
 
@@ -268,13 +227,12 @@
         </div>
 
     </div>
-</footer>
-
-
-
 
 </footer>
 
 
+
+
+<script src="js.js"></script>
 
 </html>
